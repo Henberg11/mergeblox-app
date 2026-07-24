@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "MergeBlox - Number Merge Puzzle",
+    "slug": "mergeblox-number-merge-puzzle",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2B2440"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.ronak.mergeblox",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2B2440"
+      },
+      "permissions": []
+    },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "REPLACE_WITH_YOUR_EAS_PROJECT_ID"
+      }
+    },
+    "owner": "henberg11s-team"
+  }
+}
