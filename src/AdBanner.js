@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads";
+import { usePremium } from "./premium";
 
 // TestIds.BANNER always serves Google's test ad — safe to ship for development/testing.
 // Replace PRODUCTION_BANNER_ID with your real AdMob banner unit ID before your final production build.
@@ -10,6 +11,11 @@ const useTestAds = true; // set to false once you've swapped in your real AdMob 
 const adUnitId = useTestAds ? TestIds.BANNER : PRODUCTION_BANNER_ID;
 
 export default function AdBanner() {
+  const { isPremium } = usePremium();
+
+  // Purchased "Remove Ads" — render nothing so the layout reclaims the space.
+  if (isPremium) return null;
+
   return (
     <View style={styles.container}>
       <BannerAd

@@ -22,6 +22,7 @@ import { getTileColors, fontSizeForValue } from "./tileTheme";
 import AdBanner from "./AdBanner";
 import useInterstitialAd from "./useInterstitialAd";
 import useRewardedAd from "./useRewardedAd";
+import RemoveAdsButton from "./RemoveAdsButton";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const BOARD_PADDING = 12;
@@ -103,7 +104,10 @@ export default function GameScreen() {
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.header}>
-        <Text style={styles.title}>MergeBlox</Text>
+        <View style={styles.titleRow}>
+          <Text style={styles.title}>MergeBlox</Text>
+          <RemoveAdsButton />
+        </View>
         <View style={styles.scoreRow}>
           <View style={styles.scoreBox}>
             <Text style={styles.scoreLabel}>SCORE</Text>
@@ -195,6 +199,7 @@ export default function GameScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: "#211C36" },
   header: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 8 },
+  titleRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
   title: { fontSize: 26, fontWeight: "800", color: "#F4F1FF" },
   scoreRow: { flexDirection: "row", alignItems: "center", marginTop: 10 },
   scoreBox: {
