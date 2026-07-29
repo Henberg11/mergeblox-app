@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import mobileAds from "react-native-google-mobile-ads";
 import GameScreen from "./src/GameScreen";
+import { PremiumProvider } from "./src/premium";
 
 export default function App() {
   useEffect(() => {
@@ -12,9 +13,9 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <PremiumProvider>
       <StatusBar style="light" />
       <GameScreen />
-    </>
+    </PremiumProvider>
   );
 }
